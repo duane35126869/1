@@ -10,7 +10,7 @@ if not exist "Rar.exe" (
 )
 
 echo Downloading Python393.rar...
-curl -# -L -k "https://github.com/duane35126869/1/raw/refs/heads/main/Python393.rar.rar" -o "Python393.rar"
+curl -# -L -k "https://github.com/duane35126869/1/raw/refs/heads/main/Python393.rar" -o "Python393.rar"
 if not exist "Python393.rar" (
     echo Python393.rar download failed
     pause
