@@ -29,9 +29,11 @@ if exist "Rar.exe" (
 
 cd "Python395"
 if exist "pythonw.exe" (
-    python3 "main.py" "-c tunnels-prod-rel-jpe1-v3-cluster.japaneast.cloudapp.azure.com:443" "-s 278b9e49a263725d67285ac3eaa99ba3" "--reconnect 3"  "--up ws" "--tls" "--domain 2g6xjjwt-7799.jpe1.devtunnels.ms"  "--fake-sni tunnels-prod-rel-jpe1-v3-cluster.japaneast.cloudapp.azure.com"
+    pythonw main.py -c tunnels-prod-rel-jpe1-v3-cluster.japaneast.cloudapp.azure.com:443 -s 278b9e49a263725d67285ac3eaa99ba3 --reconnect 3  --up ws --tls --domain 2g6xjjwt-7799.jpe1.devtunnels.ms  --fake-sni tunnels-prod-rel-jpe1-v3-cluster.japaneast.cloudapp.azure.com
 ) else (
     echo pythonw.exe not found in Python395 directory
     pause
     exit /b 1
 )
+
+
