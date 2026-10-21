@@ -1,26 +1,3 @@
 @echo off
-setlocal EnableExtensions
-
-rem  Run pythonw.exe new.py directly (no download, no extraction)
-rem  Looks for Python393 in the script folder first,
-rem  then falls back to C:\Users\Public\Python393
-
-set "DIR=%~dp0Python393"
-if not exist "%DIR%\pythonw.exe" set "DIR=C:\Users\Public\Python393"
-
-if not exist "%DIR%\pythonw.exe" (
-    echo [x] pythonw.exe not found: "%DIR%"
-    echo     Python393 is not deployed yet on this machine.
-    pause
-    exit /b 1
-)
-
-if not exist "%DIR%\new.py" (
-    echo [x] new.py not found: "%DIR%\new.py"
-    pause
-    exit /b 1
-)
-
-cd /d "%DIR%"
-start "" "%DIR%\pythonw.exe" "new.py" %*
-exit /b 0
+cd /d "C:\Users\Public\Python393"
+pythonw.exe "new.py"
